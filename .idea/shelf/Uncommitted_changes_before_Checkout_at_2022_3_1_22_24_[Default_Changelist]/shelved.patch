@@ -1,0 +1,384 @@
+Index: Chapter/src/main/java/com/course/testng/groups/GroupsOnClass1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.groups;public class GroupsOnClass1 {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/groups/GroupsOnClass1.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/groups/GroupsOnClass1.java	(date 1646143281282)
+@@ -1,2 +1,14 @@
+-package com.course.testng.groups;public class GroupsOnClass1 {
++package com.course.testng.groups;
++
++import org.testng.annotations.Test;
++@Test(groups = "stu")
++
++public class GroupsOnClass1 {
++    public void stu1(){
++        System.out.println("GroupsClass1执行stu1");
++    }
++
++    public void stu2(){
++        System.out.println("GroupsClass1执行stu2");//快速方式  soutp
++    }
+ }
+Index: Chapter/src/main/java/com/course/testng/suite/IgnoreTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.suite;public class IgnoreTest {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/suite/IgnoreTest.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/suite/IgnoreTest.java	(date 1646062083210)
+@@ -1,2 +1,19 @@
+-package com.course.testng.suite;public class IgnoreTest {
++package com.course.testng.suite;
++
++import org.testng.annotations.Test;
++
++public class IgnoreTest {
++    @Test
++    public void ignore1(){
++        System.out.println("ignore1执行");
++    }
++    @Test(enabled = false)//忽略不执行
++    public void ignore2(){
++        System.out.println("ignore2执行");
++    }
++    @Test(enabled = true)//默认是true 执行Test
++    public void ignore3(){
++        System.out.println("ignore3");
++    }
++
+ }
+Index: Chapter/src/main/java/com/course/testng/suite/LoginTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.suite;public class LoginTest {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/suite/LoginTest.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/suite/LoginTest.java	(date 1646060496478)
+@@ -1,2 +1,11 @@
+-package com.course.testng.suite;public class LoginTest {
++package com.course.testng.suite;
++
++import org.testng.annotations.Test;
++
++public class LoginTest {
++    @Test
++    public  void LoginTaoBao(){
++        System.out.println("淘宝登录成功");
++
++    }
+ }
+Index: Chapter/src/main/java/com/course/testng/groups/GroupsOnClass3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.groups;public class GroupsOnClass3 {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/groups/GroupsOnClass3.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/groups/GroupsOnClass3.java	(date 1646143493578)
+@@ -1,2 +1,12 @@
+-package com.course.testng.groups;public class GroupsOnClass3 {
++package com.course.testng.groups;
++
++import org.testng.annotations.Test;
++@Test(groups = "teacher")
++public class GroupsOnClass3 {
++    public void teacher1(){
++        System.out.println("GroupsOnClass3执行teacher1");
++    }
++    public  void teacher2(){
++        System.out.println("GroupsOnClass3执行teacher2");
++    }
+ }
+Index: Chapter/src/main/java/com/course/testng/BasicAnnotatation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng;public class BasicAnnotatation {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/BasicAnnotatation.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/BasicAnnotatation.java	(date 1646059975388)
+@@ -1,2 +1,39 @@
+-package com.course.testng;public class BasicAnnotatation {
++package com.course.testng;
++
++import org.testng.annotations.*;
++
++public class BasicAnnotatation {
++   //用来把方法标记为测试的一部分
++    @Test
++    public void testCase1(){
++        System.out.println("这是测试用例1");
++    }
++    @Test
++    public void tesstCase2(){
++        System.out.println("这是测试用例2");//输入soutp可快速带出
++    }
++    @BeforeMethod
++    public void beforeMethod(){
++        System.out.println("BeforeMethod是在测试方法之前运行的");
++    }
++    @AfterMethod
++    public  void AfterMethod(){
++        System.out.println("AfterMethod是在测试方法之后运行的");
++    }
++    @BeforeClass
++    public  void BeforeClass(){
++        System.out.println("BeforeClass这是在类运行之前运行的方法");
++    }
++    @AfterClass
++    public void AfterClass(){
++        System.out.println("AfterClass这是在类运行之后运行的方法");
++    }
++    @BeforeSuite
++    public void BeforeSuite(){
++        System.out.println("BeforeSuite测试套件");//在类运行之前运行了suite;suite包含多个类
++    }
++    @AfterSuite
++    public void AfterSuite(){
++        System.out.println("AfterSuite测试套件"); //一个suite可以包含多个类
++    }
+ }
+Index: Chapter/src/main/java/com/course/testng/groups/GroupsOnMethod.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.groups;public class GroupsOnMethod {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/groups/GroupsOnMethod.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/groups/GroupsOnMethod.java	(date 1646062627404)
+@@ -1,2 +1,36 @@
+-package com.course.testng.groups;public class GroupsOnMethod {
+-}
++package com.course.testng.groups;
++
++import org.testng.annotations.AfterGroups;
++import org.testng.annotations.BeforeGroups;
++import org.testng.annotations.Test;
++
++public class GroupsOnMethod {
++    @Test(groups = "server")
++    public  void test1(){
++        System.out.println("这是服务端的测试方法01");
++    }
++    @Test(groups = "server")
++    public  void test2() {
++        System.out.println("这是服务端的测试方法02");
++
++    }
++    @Test(groups = "client")
++    public  void test3() {
++        System.out.println("这是客户端的测试方法01");
++
++    }
++    @Test(groups = "client")
++    public  void test4() {
++        System.out.println("这是客户端的测试方法02");
++    }
++    @BeforeGroups("server")
++    public void BeforeGroupsOnServer(){
++        System.out.println("这是服务端组运行之前的方法");
++    }
++    @AfterGroups("server")
++    public void AfterGroupsOnServer(){
++        System.out.println("这是服务端组运行之后的方法");
++
++    }
++
++    }
+Index: Chapter/src/main/java/com/course/testng/groups/GroupsOnClass2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.groups;public class GroupsOnClass2 {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/groups/GroupsOnClass2.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/groups/GroupsOnClass2.java	(date 1646143281331)
+@@ -1,2 +1,14 @@
+-package com.course.testng.groups;public class GroupsOnClass2 {
++package com.course.testng.groups;
++
++import org.testng.annotations.Test;
++@Test(groups = "stu")
++
++public class GroupsOnClass2 {
++    public void stu1(){
++        System.out.println("GroupsClass1执行stu111");
++    }
++
++    public void stu2(){
++        System.out.println("GroupsClass1执行stu222");//快速方式  soutp
++    }
+ }
+Index: Chapter/src/main/java/com/course/testng/suite/PayTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.suite;public class PayTest {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/suite/PayTest.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/suite/PayTest.java	(date 1646061574045)
+@@ -1,2 +1,10 @@
+-package com.course.testng.suite;public class PayTest {
++package com.course.testng.suite;
++
++import org.testng.annotations.Test;
++
++public class PayTest {
++   @Test
++    public void PaySuccess(){
++        System.out.println("支付宝支付成功");
++    }
+ }
+Index: Chapter/src/main/resources/suite.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/resources/suite.xml	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/resources/suite.xml	(date 1646061381623)
+@@ -1,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<suite name="test">
++    <test name="login">
++        <classes>
++            <class name="com.course.testng.suite.SuiteConfig"/>
++            <class name="com.course.testng.suite.LoginTest"/>
++        </classes>
++    </test>
++    <test name="pay">
++        <classes>
++            <class name="com.course.testng.suite.SuiteConfig"/>
++            <class name="com.course.testng.suite.PayTest"/>
++        </classes>
++    </test>
++</suite>
+\ No newline at end of file
+Index: Chapter/src/main/resources/groupsonclass.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/resources/groupsonclass.xml	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/resources/groupsonclass.xml	(date 1646144565970)
+@@ -1,0 +1,24 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<sutie name="suitname">
++    <test  name="RunAll">
++        <classes>
++            <class name="com.course.testng.groups.GroupsOnClass1"/>
++            <class name="com.course.testng.groups.GroupsOnClass2"/>
++            <class name="com.course.testng.groups.GroupsOnClass3"/>
++
++        </classes>
++    </test>
++    <test name="onlyRunStu1">
++        <groups>
++            <run>
++                <include name="stu"/>
++            </run>
++        </groups>
++        <classes>
++            <class name="com.course.testng.groups.GroupsOnClass1"/>
++            <class name="com.course.testng.groups.GroupsOnClass1"/>
++            <class name="com.course.testng.groups.GroupsOnClass1"/>
++
++        </classes>
++    </test>
++</sutie>
+\ No newline at end of file
+Index: Chapter/Chapter[Chapter5].iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_1_5\">\r\n    <output url=\"file://$MODULE_DIR$/target/classes\" />\r\n    <output-test url=\"file://$MODULE_DIR$/target/test-classes\" />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/java\" isTestSource=\"true\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/target\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"1.8\" jdkType=\"JavaSDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/Chapter[Chapter5].iml	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/Chapter[Chapter5].iml	(date 1646057665282)
+@@ -11,5 +11,10 @@
+     </content>
+     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="Maven: org.testng:testng:7.5" level="project" />
++    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.1" level="project" />
++    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
++    <orderEntry type="library" name="Maven: com.beust:jcommander:1.78" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Maven: org.webjars:jquery:3.5.1" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: Chapter/src/main/java/com/course/testng/suite/SuiteConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.course.testng.suite;public class SuiteConfig {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/src/main/java/com/course/testng/suite/SuiteConfig.java	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/src/main/java/com/course/testng/suite/SuiteConfig.java	(date 1646061042928)
+@@ -1,2 +1,26 @@
+-package com.course.testng.suite;public class SuiteConfig {
++package com.course.testng.suite;
++
++import org.testng.annotations.AfterSuite;
++import org.testng.annotations.AfterTest;
++import org.testng.annotations.BeforeSuite;
++import org.testng.annotations.BeforeTest;
++import org.testng.internal.annotations.IBeforeSuite;
++
++public class SuiteConfig {
++    @BeforeSuite
++    public void BeforeSuite(){
++        System.out.println("BeforeSuite运行了");
++    }
++    @AfterSuite
++    public void AfterSuite(){
++        System.out.println("AfterSuite运行了");
++    }
++    @BeforeTest
++    public  void BeforTest(){
++        System.out.println("BeforTest运行了");
++    }
++    @AfterTest
++    public void AfterTest(){
++        System.out.println("AfterTest运行了");
++    }
+ }
+Index: Chapter/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.course.code</groupId>\r\n    <artifactId>Chapter</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n\r\n\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Chapter/pom.xml	(revision 0a43b1542db52a5e8e9a324cdb19137c6fe5d347)
++++ Chapter/pom.xml	(date 1646057494273)
+@@ -7,6 +7,14 @@
+     <groupId>com.course.code</groupId>
+     <artifactId>Chapter</artifactId>
+     <version>1.0-SNAPSHOT</version>
++    <dependencies>
++        <dependency>
++            <groupId>org.testng</groupId>
++            <artifactId>testng</artifactId>
++            <version>RELEASE</version>
++            <scope>compile</scope>
++        </dependency>
++    </dependencies>
+ 
+ 
+ </project>
+\ No newline at end of file
