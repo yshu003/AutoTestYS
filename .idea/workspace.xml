@@ -28,11 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80853a87-8217-4821-b64a-8f3c580b3632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AutoTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="80853a87-8217-4821-b64a-8f3c580b3632" name="Default Changelist" comment="坎坎坷坷过军付" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,8 +191,16 @@
       <workItem from="1646056711159" duration="6256000" />
       <workItem from="1646141585807" duration="2911000" />
       <workItem from="1646149722979" duration="610000" />
-      <workItem from="1646150436337" duration="747000" />
+      <workItem from="1646150436337" duration="1047000" />
     </task>
+    <task id="LOCAL-00001" summary="坎坎坷坷过军付">
+      <created>1646151305306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646151305306</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +232,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="坎坎坷坷过军付" />
+    <option name="LAST_COMMIT_MESSAGE" value="坎坎坷坷过军付" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="186" key="#Notifications" timestamp="1646150213273">
@@ -270,6 +276,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1322" height="208" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1646058396552" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1646151386931">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646151386931" />
     <state x="443" y="75" key="git4idea.branch.GitSmartOperationDialog" timestamp="1646150751362">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
